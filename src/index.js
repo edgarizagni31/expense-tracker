@@ -1,13 +1,12 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import  { ExpenseTrackerApp } from './ExpenseTrackerApp'
-import './index.css';
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <ExpenseTrackerApp />,
+  <ExpenseTrackerApp/>,
   document.getElementById('root')
 );
 

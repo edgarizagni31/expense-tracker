@@ -3,7 +3,7 @@ export const getStatistics = ( transactions ) => {
     let totalExpense = 0;
     let balance = 0;
 
-    for(let transaction of transactions ) {
+    transactions.forEach( ( transaction ) => {
         let { amount } = transaction;
 
         if (amount >= 0) {
@@ -13,7 +13,8 @@ export const getStatistics = ( transactions ) => {
         }
 
         balance += parseInt(amount);
-    }
+    } ) 
+    
 
     return {
         totalIcome,
