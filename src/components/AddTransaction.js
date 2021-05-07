@@ -2,36 +2,46 @@ import React from 'react';
 
 import { useForm } from '../hooks/useForm';
 import { FormItem } from './FormItem';
+import Swal from 'sweetalert2';
+
+const createAlert = ( text) => {
+  return Swal.fire({
+    title: 'Error!',
+    text: text,
+    icon: 'error',
+    confirmButtonText: 'Ok'
+  })
+}
 
 export const AddTransaction = ({ setTransactions }) => {
   const [transaction, handleInputChange] = useForm({ desc: "", amount: ""});
+  const regexNumber = /[1-9]+/;
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
 
     if ( transaction.desc.length === 0 && transaction.amount.length === 0) {
-      alert('Los campos no pueden estar vacios.')
+      createAlert('Los campos no pueden estar vacios.');
       return;
     }
-
 
     if ( transaction.desc === null  || transaction.desc.length === 0) {
-      alert('Por favor ingrese una descripción.')
+      createAlert('Por favor ingrese una descripción.')
       return;
     }
 
-    if ( transaction.desc.length < 3  ) {
-      alert('Descripción no valida, tiene que tener más de tres caracteres.')
+    if ( transaction.desc.length < 3  || regexNumber.test(transaction.desc) ) {
+      createAlert('Descripción no valida, no puede ser un valor númerico.');
       return;
     }
 
     if ( transaction.amount === null ) {
-      alert('Por favor ingrese una cantidad.')
+      createAlert('Por favor ingrese una cantidad.')
       return;
     } 
     
-    if ( transaction.amount.length === 0) {
-      alert('Cantidad no valida, tiene que ser un valor númerico.')
+    if ( transaction.amount.length === 0 || !regexNumber.test(transaction.amount)  ) {
+      createAlert('Cantidad no valida, tiene que ser un valor númerico.')
       return;
     }
 
