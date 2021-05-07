@@ -7,12 +7,13 @@ export const getStatistics = ( transactions ) => {
         let { amount } = transaction;
 
         if (amount >= 0) {
-            totalIcome += parseInt(amount);
+            totalIcome += parseFloat(amount);
+            
         }else {
-            totalExpense += parseInt(amount);
+            totalExpense += parseFloat(amount);
         }
 
-        balance += parseInt(amount);
+        balance += parseFloat(amount);
     } ) 
     
 

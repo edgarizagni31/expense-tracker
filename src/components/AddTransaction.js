@@ -1,15 +1,36 @@
-import React from "react";
+import React from 'react';
 
-import { useForm } from "../hooks/useForm";
-import { FormItem } from "./FormItem";
+import { useForm } from '../hooks/useForm';
+import { FormItem } from './FormItem';
 
 export const AddTransaction = ({ setTransactions }) => {
   const [transaction, handleInputChange] = useForm({});
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
+
+    if ( transaction.desc === null ) {
+      alert('Por favor ingrese una descripción.')
+      return;
+    }
+    if ( !transaction.desc.length  ) {
+      alert('Descripción no valida, tiene que tener más de tres caracteres.')
+      return;
+    }
+
+    if ( transaction.amount === null ) {
+      alert('Por favor ingrese una cantidad.')
+      return;
+    } 
+    
+    if ( transaction.amount.length === 0) {
+      alert('Cantidad no valida, tiene que ser un valor númerico.')
+      return;
+    }
+
     setTransactions((t) => [transaction, ...t]);
     document.querySelector("form").reset();
+    
   };
 
   return (

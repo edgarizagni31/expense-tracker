@@ -1,7 +1,6 @@
 import React from "react";
 
 export const History = ({ transactions } ) => {
-  console.log(transactions.length, typeof transactions);
   return (
     <section className = 'w-100 mb-4'>
       <h2 className = 'fs-6 pb-1 border-bottom border-dark'>Historia</h2>
