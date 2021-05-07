@@ -4,16 +4,23 @@ import { useForm } from '../hooks/useForm';
 import { FormItem } from './FormItem';
 
 export const AddTransaction = ({ setTransactions }) => {
-  const [transaction, handleInputChange] = useForm({});
+  const [transaction, handleInputChange] = useForm({ desc: "", amount: ""});
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
 
-    if ( transaction.desc === null ) {
+    if ( transaction.desc.length === 0 && transaction.amount.length === 0) {
+      alert('Los campos no pueden estar vacios.')
+      return;
+    }
+
+
+    if ( transaction.desc === null  || transaction.desc.length === 0) {
       alert('Por favor ingrese una descripción.')
       return;
     }
-    if ( !transaction.desc.length  ) {
+
+    if ( transaction.desc.length < 3  ) {
       alert('Descripción no valida, tiene que tener más de tres caracteres.')
       return;
     }
@@ -30,7 +37,6 @@ export const AddTransaction = ({ setTransactions }) => {
 
     setTransactions((t) => [transaction, ...t]);
     document.querySelector("form").reset();
-    
   };
 
   return (
