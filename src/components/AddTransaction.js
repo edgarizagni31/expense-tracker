@@ -30,8 +30,13 @@ export const AddTransaction = ({ setTransactions }) => {
       return;
     }
 
-    if ( transaction.desc.length < 3  || regexNumber.test(transaction.desc) ) {
+    if ( regexNumber.test(transaction.desc) ) {
       createAlert('Descripción no valida, no puede ser un valor númerico.');
+      return;
+    }
+
+    if ( transaction.desc.length < 3 && !regexNumber.test(transaction.desc) ) {
+      createAlert('Descripción no valida, tiene que tener 3 caracteres como minimo.');
       return;
     }
 
