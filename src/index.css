@@ -21,6 +21,10 @@ body {
   width: 25%;
 }
 
+.icon-delete:hover {
+  cursor: pointer;
+}
+
 
 @media screen and ( max-width: 1200px ) {
   .main {
