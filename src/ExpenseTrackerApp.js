@@ -15,7 +15,7 @@ export const ExpenseTrackerApp = () => {
   
   return (
     <main className = 'mt-3 mx-auto main'>
-      <h1 className = 'fs-4 fw-bold mb-3 text-center'> Registro de Gastos</h1>
+      <h1 className = 'fs-4 fw-bold mb-3 text-center'> Registro de Transacciones </h1>
       <Balance  transactions = { transactions }/>
       <History transactions = { transactions } setTransactions  = { setTransactions } />
       <AddTransaction setTransactions = { setTransactions } />

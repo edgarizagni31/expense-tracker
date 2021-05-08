@@ -18,7 +18,7 @@ export const Balance = ({ transactions }) => {
         </div>
         <div className = 'col shadow-sm text-center bg-white'>
           <p className = 'mt-1'>Egresos</p>
-          <p className = 'text-danger'>S/ {totalExpense}</p>
+          <p className = 'text-danger'>S/ { Math.abs(totalExpense) }</p>
         </div>
       </article>
     </section>
