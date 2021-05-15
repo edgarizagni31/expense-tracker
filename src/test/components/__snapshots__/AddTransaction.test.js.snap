@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test to <AddTransaction /> should show  correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <h2
+    className="fs-6 pb-1 border-bottom border-dark"
+  >
+    Añadir una nueva transacción
+  </h2>
+  <FormItem
+    handleInputChange={[Function]}
+    id="desc"
+    label="Descripción"
+    placeholder="Ingrese una descripción"
+  />
+  <FormItem
+    formText="negativo(-) gasto, positivo(+) ingreso"
+    handleInputChange={[Function]}
+    id="amount"
+    label="Cantidad"
+    placeholder="Ingrese la cantidad"
+  />
+  <button
+    className="w-100 btn btn-primary mb-3 text-align-center mx-auto"
+    type="submit"
+  >
+    Añadir transacción
+  </button>
+</form>
+`;

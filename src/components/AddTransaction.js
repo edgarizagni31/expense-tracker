@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { useForm } from '../hooks/useForm';
 import { FormItem } from './FormItem';
 import Swal from 'sweetalert2';
@@ -13,8 +13,8 @@ const createAlert = ( text) => {
   })
 }
 
-export const AddTransaction = ({ setTransactions }) => {
-  const [transaction, handleInputChange] = useForm({ desc: "", amount: ""});
+export const AddTransaction = ({ setTransactions, initialState = {desc: "", amount: ""} } ) => {
+  const [transaction, handleInputChange ] = useForm(initialState);
   const regexNumber = /[1-9]+/;
 
   const handleSubmitForm = (e) => {
@@ -45,33 +45,36 @@ export const AddTransaction = ({ setTransactions }) => {
       return;
     }
 
-    setTransactions((t) => [transaction, ...t]);
-    document.querySelector("form").reset();
+    setTransactions((t) => [transaction, ...t]); 
+    document.querySelector('form').reset();
   };
 
   return (
     <form onSubmit={handleSubmitForm}>
       <h2 className = 'fs-6 pb-1 border-bottom border-dark'>Añadir una nueva transacción</h2>
       <FormItem
-        id="desc"
-        placeholder="Ingrese una descripción"
-        label="Descripción"
-        handleInputChange={handleInputChange}
+        id = 'desc'
+        placeholder = 'Ingrese una descripción'
+        label = 'Descripción'
+        handleInputChange = {handleInputChange}
       />
       <FormItem
-        id="amount"
-        placeholder="Ingrese la cantidad"
-        label="Cantidad"
-        formText = "negativo(-) gasto, positivo(+) ingreso"
-        handleInputChange={handleInputChange}
+        id = 'amount'
+        placeholder = 'Ingrese la cantidad'
+        label = 'Cantidad'
+        formText = 'negativo(-) gasto, positivo(+) ingreso'
+        handleInputChange = {handleInputChange}
       />
-
       <button
-        type="submit"
-        className="w-100 btn btn-primary mb-3 text-align-center mx-auto"
+        type = 'submit'
+        className = 'w-100 btn btn-primary mb-3 text-align-center mx-auto'
       >
         Añadir transacción
       </button>
     </form>
   );
 };
+
+AddTransaction.propTypes = {
+  setTransactions: PropTypes.func.isRequired
+}

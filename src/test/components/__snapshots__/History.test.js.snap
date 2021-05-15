@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test to <History /> should show correctly 1`] = `
+<section
+  className="w-100 mb-4"
+>
+  <h2
+    className="fs-6 pb-1 border-bottom border-dark"
+  >
+    Historia
+  </h2>
+  <p>
+    No se ha registrado transacciónes
+  </p>
+</section>
+`;

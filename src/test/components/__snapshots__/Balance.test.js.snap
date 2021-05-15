@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test to  <Balance /> should show correctly 1`] = `
+<section
+  className="mb-4 container "
+>
+  <div
+    className="mb-2"
+  >
+    <p
+      className="mb-0 p-0"
+    >
+       Tu balance 
+    </p>
+    <p
+      className="fw-bold fs-4 p-0"
+    >
+      S/ 
+      0
+    </p>
+  </div>
+  <article
+    className="row"
+  >
+    <div
+      className="col shadow-sm text-center bg-white me-1 "
+    >
+      <p
+        className="mt-1"
+      >
+        Ingresos
+      </p>
+      <p
+        className="text-success"
+      >
+        S/ 
+        0
+      </p>
+    </div>
+    <div
+      className="col shadow-sm text-center bg-white"
+    >
+      <p
+        className="mt-1"
+      >
+        Egresos
+      </p>
+      <p
+        className="text-danger"
+      >
+        S/ 
+        0
+      </p>
+    </div>
+  </article>
+</section>
+`;

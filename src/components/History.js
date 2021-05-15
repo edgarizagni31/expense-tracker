@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 import { BsX } from 'react-icons/bs'
 
@@ -13,7 +14,7 @@ export const History = ({ transactions, setTransactions } ) => {
       {
           transactions.length === 0
           ?
-          <p>No se ha registrado transacciónes </p>
+          <p>No se ha registrado transacciónes</p>
           :
           transactions.map( (transaction) => {
             const { desc, amount, id } = transaction;
@@ -39,3 +40,9 @@ export const History = ({ transactions, setTransactions } ) => {
     </section>
   );
 };
+
+
+History.propTypes = {
+  transactions: PropTypes.array.isRequired,
+  setTransactions: PropTypes.func.isRequired
+}

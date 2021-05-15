@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test to <ExpenseTrackerApp /> should show correctly 1`] = `
+<main
+  className="mt-3 mx-auto main"
+>
+  <h1
+    className="fs-4 fw-bold mb-3 text-center"
+  >
+     Registro de Transacciones 
+  </h1>
+  <Balance
+    transactions={Array []}
+  />
+  <History
+    setTransactions={[Function]}
+    transactions={Array []}
+  />
+  <AddTransaction
+    setTransactions={[Function]}
+  />
+</main>
+`;
