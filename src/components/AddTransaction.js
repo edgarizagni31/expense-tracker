@@ -14,7 +14,7 @@ const createAlert = ( text) => {
 }
 
 export const AddTransaction = ({ setTransactions, initialState = {desc: "", amount: ""} } ) => {
-  const [transaction, handleInputChange ] = useForm(initialState);
+  const [transaction, handleInputChange, resetData ] = useForm(initialState);
   const regexNumber = /[1-9]+/;
 
   const handleSubmitForm = (e) => {
@@ -46,7 +46,8 @@ export const AddTransaction = ({ setTransactions, initialState = {desc: "", amou
     }
 
     setTransactions((t) => [transaction, ...t]); 
-    document.querySelector('form').reset();
+    document.querySelectorAll('input').forEach( (input) => input.value = '' );
+    resetData();
   };
 
   return (

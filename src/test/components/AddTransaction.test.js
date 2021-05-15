@@ -15,13 +15,12 @@ describe('test to <AddTransaction />', () => {
         expect(wrapper.find('FormItem').length ).toBe(2);
     })
 
-    test('should no run setTransaction()', () => {
+    test('should not run setTransaction if a field is wrong ', () => {
         wrapper.find('form').simulate('submit', { preventDefault(){} });
         expect(setTransactions).not.toHaveBeenCalled();
     })
 
-    /*   
-    test('should run setTransaction()', () => {
+    test('should run setTransaction if the fields are correct', () => {
         const  { result } =  renderHook( () => useForm( { desc: '', amount: ''} ) );
         const [ , handleInputChange ] = result.current;
 
@@ -41,5 +40,4 @@ describe('test to <AddTransaction />', () => {
 
         expect(setTransactions).toHaveBeenCalled();
     })
-    */
 })
