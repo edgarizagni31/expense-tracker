@@ -5,8 +5,7 @@ mismos.
 ## Uso 
 - `npm install` para restaurar las dependencias del proyecto.  
 - Para levantar la aplicación `npm start`.  
-- Para generar un build `npm run build`, y para ejecutar un servidor 
-de dasarrollo instale [serve](https://www.npmjs.com/package/serve).
+- Para generar un build `npm run build`.
 
 ## Testing 
 Use Jest para evaluar si se los componentes se mostraban correctamente y que los 
@@ -17,6 +16,5 @@ resultados a mostrar sean los esperados.
 
 ## Construido con 
 
-- React
-- Bootstrap 
-
+- [React](https://es.reactjs.org/)
+- [Bootstrap](https://getbootstrap.com/)
